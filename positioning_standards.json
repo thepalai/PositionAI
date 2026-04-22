@@ -1,0 +1,131 @@
+{
+  "views": [
+    {
+      "view": "Hip AP",
+      "full_name": "AP Unilateral Hip Projection: Hip and Proximal Femur",
+      "bontrager_reference": "p.283",
+      "bontrager_edition": "8th edition",
+
+      "warning": "Do not attempt to rotate legs if fracture is suspected. An AP pelvis projection to include both hips for comparison should be completed before an AP unilateral hip is performed for possible hip or pelvic trauma.",
+
+      "aruco_anchoring": {
+        "requires_markers": ["plate_A", "floor_B"],
+        "ghost_anchor": "plate_A",
+        "ghost_offset_from_anchor_cm": {
+          "hip_midpoint": [0, 0, 10]
+        }
+      },
+
+      "partial_skeleton": {
+        "validate_landmarks": [23, 24, 25, 26, 27, 28],
+        "ignore_landmarks": "upper_body",
+        "ghost_region": "lower_body"
+      },
+
+      "arm_position": {
+        "instruction": "Arms at sides or across superior chest",
+        "cue": "raise — hold handles above hip level",
+        "cue_reason": "Free-hanging wrists fall over hip landmarks 23/24"
+      },
+
+      "patient_position": {
+        "description": "Patient supine",
+        "arms": "at sides or across superior chest"
+      },
+
+      "part_position": {
+        "description": "Locate femoral neck and align to CR and to midline of table and/or IR. Ensure no rotation of pelvis. Rotate affected leg internally 15 to 20 degrees.",
+        "pelvis_alignment": "Equal distance from both ASISs to table — no rotation",
+        "leg_rotation": "Internal rotation of affected leg"
+      },
+
+      "cr": {
+        "direction": "Perpendicular to IR",
+        "centering": "1 to 2 inches (2.5 to 5 cm) distal to midfemoral neck",
+        "note": "Femoral neck can be located about 1 to 2 inches (3 to 5 cm) medial and 3 to 4 inches (8 to 10 cm) distal to ASIS"
+      },
+
+      "standards": {
+        "leg_internal_rotation_deg": {
+          "min": 15,
+          "max": 20,
+          "description": "Internal rotation of affected leg — places femoral neck in full profile"
+        },
+        "pelvis_tilt_deg": {
+          "max": 2,
+          "description": "Equal ASIS-to-table distance — no pelvic rotation or tilt"
+        },
+        "pelvis_rotation_deg": {
+          "max": 2,
+          "description": "No rotation of pelvis"
+        }
+      },
+
+      "tolerances": {
+        "green": {
+          "leg_rotation_deg": 2,
+          "pelvis_tilt_deg": 1
+        },
+        "yellow": {
+          "leg_rotation_deg": 5,
+          "pelvis_tilt_deg": 2
+        }
+      },
+
+      "min_landmark_visibility": {
+        "hips": 0.5,
+        "knees": 0.3,
+        "ankles": 0.3
+      },
+
+      "respiration": "Suspend respiration during exposure",
+
+      "technical_factors": {
+        "min_SID_cm": 102,
+        "IR_size_cm": "24 x 30",
+        "IR_orientation": "lengthwise",
+        "grid": true,
+        "kVp_analog": "80 +/- 5",
+        "kVp_digital": "80 to 85"
+      },
+
+      "evaluation_criteria": {
+        "position": "Greater trochanter and femoral head and neck in full profile without foreshortening. Lesser trochanter should not project beyond medial border of femur — with sufficient internal rotation only its very tip may be visible.",
+        "anatomy": "Proximal one-third of femur with acetabulum, femoral head, neck, and greater trochanter. Adjacent parts of pubis, ischium, and ilium visible.",
+        "exposure": "Optimal exposure visualizes margins of femoral head and acetabulum through overlying pelvic structures without overexposing other parts of proximal femur or pelvic structures."
+      },
+
+      "contraindications": [
+        "hip_fracture_suspected",
+        "hip_replacement",
+        "recent_hip_surgery"
+      ],
+
+      "adaptations": {
+        "hip_fracture_suspected": {
+          "warning": "Do not rotate leg — fracture suspected. Perform AP pelvis first for comparison.",
+          "suggest_view": "AP Pelvis (both hips) first, then Danelius-Miller if lateral needed",
+          "reference": "Bontrager p.283 warning"
+        },
+        "hip_replacement": {
+          "warning": "Do not rotate leg — hip replacement present. Standard rotation may dislocate prosthesis.",
+          "suggest_view": "Axiolateral Inferosuperior (Danelius-Miller) — Bontrager p.284",
+          "reference": "Bontrager p.284"
+        },
+        "recent_hip_surgery": {
+          "warning": "Do not rotate leg — recent hip surgery. Confirm with radiologist before positioning.",
+          "suggest_view": "Danelius-Miller if lateral view required",
+          "reference": "Bontrager p.284"
+        },
+        "limited_ROM": {
+          "acceptable_rotation_deg": {
+            "min": 10,
+            "max": 15
+          },
+          "flag_for_radiologist": true,
+          "note": "Accept reduced rotation range. Flag result for radiologist review. Ghost skeleton shows adapted target."
+        }
+      }
+    }
+  ]
+}

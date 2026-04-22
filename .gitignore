@@ -1,0 +1,68 @@
+# ── PositionAI: data files that should NOT be committed ───────────────────
+
+# MediaPipe pose model — auto-downloaded on first run, ~30MB
+pose_landmarker_heavy.task
+*.task
+
+# Stereo calibration files — specific to camera + room setup
+stereo_calib_*.npz
+*.npz
+
+# Per-session ghost calibration — not portable between users
+ghost_calibration.json
+
+# Bontrager and any other copyrighted clinical reference material
+# (only derived JSON with page references is safe to commit)
+*.pdf
+bontrager*
+Bontrager*
+
+# Debug captures from calibration sessions
+debug/
+debug_captures/
+debug_capture_*.png
+debug_capture_*.jpg
+debug_capture_*.jpeg
+*_debug.png
+*_debug.jpg
+
+# ── Python ────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# ── Virtual environments (catches nested .venv too, e.g. HIP_AP_GHOST/.venv) ─
+.venv/
+venv/
+env/
+ENV/
+**/.venv/
+**/venv/
+
+# ── IDE ───────────────────────────────────────────────────────────────────
+.idea/
+**/.idea/
+.vscode/
+**/.vscode/
+*.swp
+*.swo
+
+# ── OS ────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Logs ──────────────────────────────────────────────────────────────────
+*.log
+*.tmp
+
+# ── Streamlit ─────────────────────────────────────────────────────────────
+.streamlit/secrets.toml
+
+# ── Project-specific subfolders not for public release ─────────────────────
+HIP_AP_GHOST/
