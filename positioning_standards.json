@@ -5,10 +5,12 @@
       "full_name": "AP Unilateral Hip Projection: Hip and Proximal Femur",
       "bontrager_reference": "p.283",
       "bontrager_edition": "8th edition",
+      "sources_note": "Positioning values come from Bontrager's Textbook of Radiographic Positioning and Related Anatomy, 8th ed., p.283–284. Each section says where its values come from (a source field, or reference under adaptations). Anything marked placeholder is not from Bontrager and is pending radiographer review. The top-level full_name, warning and respiration text are from p.283.",
 
       "warning": "Do not attempt to rotate legs if fracture is suspected. An AP pelvis projection to include both hips for comparison should be completed before an AP unilateral hip is performed for possible hip or pelvic trauma.",
 
       "aruco_anchoring": {
+        "source": "PositionAI design (not from Bontrager)",
         "requires_markers": ["plate_A", "floor_B"],
         "ghost_anchor": "plate_A",
         "ghost_offset_from_anchor_cm": {
@@ -17,29 +19,34 @@
       },
 
       "partial_skeleton": {
+        "source": "PositionAI design (not from Bontrager)",
         "validate_landmarks": [23, 24, 25, 26, 27, 28],
         "ignore_landmarks": "upper_body",
         "ghost_region": "lower_body"
       },
 
       "arm_position": {
+        "source": "instruction from Bontrager p.283; cue and cue_reason are PositionAI design (not from Bontrager)",
         "instruction": "Arms at sides or across superior chest",
         "cue": "raise — hold handles above hip level",
         "cue_reason": "Free-hanging wrists fall over hip landmarks 23/24"
       },
 
       "patient_position": {
+        "source": "Bontrager 8th ed. p.283",
         "description": "Patient supine",
         "arms": "at sides or across superior chest"
       },
 
       "part_position": {
+        "source": "Bontrager 8th ed. p.283",
         "description": "Locate femoral neck and align to CR and to midline of table and/or IR. Ensure no rotation of pelvis. Rotate affected leg internally 15 to 20 degrees.",
         "pelvis_alignment": "Equal distance from both ASISs to table — no rotation",
         "leg_rotation": "Internal rotation of affected leg"
       },
 
       "cr": {
+        "source": "Bontrager 8th ed. p.283",
         "direction": "Perpendicular to IR",
         "centering": "1 to 2 inches (2.5 to 5 cm) distal to midfemoral neck",
         "note": "Femoral neck can be located about 1 to 2 inches (3 to 5 cm) medial and 3 to 4 inches (8 to 10 cm) distal to ASIS"
@@ -47,21 +54,25 @@
 
       "standards": {
         "leg_internal_rotation_deg": {
+          "source": "Bontrager 8th ed. p.283",
           "min": 15,
           "max": 20,
           "description": "Internal rotation of affected leg — places femoral neck in full profile"
         },
         "pelvis_tilt_deg": {
+          "source": "Placeholder limit, pending radiographer review (not from Bontrager)",
           "max": 2,
           "description": "Equal ASIS-to-table distance — no pelvic rotation or tilt"
         },
         "pelvis_rotation_deg": {
+          "source": "Rule from Bontrager p.283 (no pelvic rotation); the 2° limit is a placeholder pending radiographer review",
           "max": 2,
           "description": "No rotation of pelvis"
         }
       },
 
       "tolerances": {
+        "source": "Placeholder values, pending radiographer review (not from Bontrager)",
         "green": {
           "leg_rotation_deg": 2,
           "pelvis_tilt_deg": 1
@@ -73,6 +84,7 @@
       },
 
       "min_landmark_visibility": {
+        "source": "PositionAI engineering thresholds (not from Bontrager)",
         "hips": 0.5,
         "knees": 0.3,
         "ankles": 0.3
@@ -81,6 +93,7 @@
       "respiration": "Suspend respiration during exposure",
 
       "technical_factors": {
+        "source": "Bontrager 8th ed. p.283",
         "min_SID_cm": 102,
         "IR_size_cm": "24 x 30",
         "IR_orientation": "lengthwise",
@@ -90,6 +103,7 @@
       },
 
       "evaluation_criteria": {
+        "source": "Bontrager 8th ed. p.283",
         "position": "Greater trochanter and femoral head and neck in full profile without foreshortening. Lesser trochanter should not project beyond medial border of femur — with sufficient internal rotation only its very tip may be visible.",
         "anatomy": "Proximal one-third of femur with acetabulum, femoral head, neck, and greater trochanter. Adjacent parts of pubis, ischium, and ilium visible.",
         "exposure": "Optimal exposure visualizes margins of femoral head and acetabulum through overlying pelvic structures without overexposing other parts of proximal femur or pelvic structures."
@@ -110,20 +124,21 @@
         "hip_replacement": {
           "warning": "Do not rotate leg — hip replacement present. Standard rotation may dislocate prosthesis.",
           "suggest_view": "Axiolateral Inferosuperior (Danelius-Miller) — Bontrager p.284",
-          "reference": "Bontrager p.284"
+          "reference": "Suggested view from Bontrager p.284 (Danelius-Miller). The do-not-rotate warning is a PositionAI project rule, not from Bontrager, pending radiographer review."
         },
         "recent_hip_surgery": {
           "warning": "Do not rotate leg — recent hip surgery. Confirm with radiologist before positioning.",
           "suggest_view": "Danelius-Miller if lateral view required",
-          "reference": "Bontrager p.284"
+          "reference": "Suggested view from Bontrager p.284 (Danelius-Miller). The do-not-rotate warning is a PositionAI project rule, not from Bontrager, pending radiographer review."
         },
         "limited_ROM": {
+          "source": "Placeholder range, pending radiographer review (not from Bontrager)",
           "acceptable_rotation_deg": {
             "min": 10,
             "max": 15
           },
-          "flag_for_radiologist": true,
-          "note": "Accept reduced rotation range. Flag result for radiologist review. Ghost skeleton shows adapted target."
+          "flag_for_radiographer": true,
+          "note": "Accept reduced rotation range. Flag result for radiographer review. Ghost skeleton shows adapted target."
         }
       }
     }
